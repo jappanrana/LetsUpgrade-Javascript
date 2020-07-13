@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Day 2 Assignment</title>
+	</head>
+	<body>
+		<h1>Assignment-question 1</h1>
+		<p>
+			Today is :&nbsp
+			<span id="one"></span>.<br>
+			Current time is :&nbsp
+			<span id="two"></span>
+		</p>
+		<script>
+			var d = new Date();
+			var fday = d.getDay();
+			var fhour = d.getHours();
+			var minute = d.getMinutes();
+			var seconds = d.getSeconds();
+			var week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+			var day = week[fday];
+			if (fhour > 12)
+			{
+				var hour = (parseInt(fhour)-12)+" PM"
+			}
+			else if (fhour == 12)
+			{
+				var hour = fhour+" PM"
+			}
+			else
+			{
+				var hour = fhour+" AM"
+			}
+			var final = hour+" : "+minute+" : "+seconds
+			document.getElementById("one").innerHTML = day;
+			document.getElementById("two").innerHTML = final;
+		</script>
+		<h1>Assignment-question 2</h1>
+		<button onclick="window.print()">Print</button>
+		<h1>Assignment-question 3</h1>
+		<p id="three"></p>
+		<script>
+			var b = new Date();
+			var year = b.getFullYear();
+			var fmonth = b.getMonth();
+			fmonth = parseInt(fmonth)+1
+			var fdate = b.getDate();
+			if (fmonth < 10)
+			{
+				var month = "0"+fmonth
+			}
+			else
+			{
+				var month = fmonth
+			}
+			if (fdate < 10)
+			{
+				var date = "0"+fdate
+			}
+			else
+			{
+				var date = fdate
+			}
+			var final1 = month+"-"+date+"-"+year
+			var final2 = month+"/"+date+"/"+year
+			var final3 = date+"-"+month+"-"+year
+			var final4 = date+"/"+month+"/"+year
+			var last = final1+" , "+final2+" or "+final3+" , "+final4
+			document.getElementById("three").innerHTML = last;
+		</script>
+	</body>
+</html>
