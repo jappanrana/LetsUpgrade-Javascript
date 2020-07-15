@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>day 1 assignment</title>
+	</head>
+	<body>
+		<h1>question 1</h1>
+		<p>
+			assert()	Writes an error message to the console if the assertion is false<br>
+			clear()		Clears the console<br>
+			count()		Logs the number of times that this particular call to count() has been called<br>
+			error() 	Outputs an error message to the console<br>
+			groupEnd()	Exits the current inline group in the console<br>
+			info()		Outputs an informational message to the console<br>
+			log()		Outputs a message to the console<br>
+			table()		Displays tabular data as a table<br>
+			time()		Starts a timer (can track how long an operation takes)<br>
+			timeEnd()	Stops a timer that was previously started by console.time()<br>
+			trace()		Outputs a stack trace to the console<br>
+			warn()		Outputs a warning message to the console<br>
+			groupCollapsed()	Creates a new inline group in the console. However, the new group is created collapsed. The user will need to use the disclosure button to expand it<br>
+			group()		Creates a new inline group in the console. This indents following console messages by an additional level, until console.groupEnd() is called<br>
+		</p>
+		<h1>question 2</h1>
+		<p>var declarations are globally scoped or function scoped while let and const are block scoped.<br>
+			var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.<br>
+			They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.<br>
+			While var and let can be declared without being initialized, const must be initialized during declaration.
+		</p>
+		<script>
+			var a
+			let b
+			const c = "hello" //we cant change this and it has to be initialized when declared
+			//c = "hi" will give us an error
+			a = 10 //both var and let can be updated
+			b = "sweet"
+			var a = 197
+			//let b = 76 will throw error as let cant be redeclared
+		</script>
+		<h1>question 3</h1>
+		<p>
+			<b>number</b><br>
+			The number type represents both integer and floating point numbers.
+			There are many operations for numbers, e.g. multiplication *, division /, addition +, subtraction -, and so on.
+			Besides regular numbers, there are so-called “special numeric values” which also belong to this data type: Infinity, -Infinity and NaN.<br>
+			<b>bigint</b><br>
+			In JavaScript, the “number” type cannot represent integer values larger than (253-1) (that’s 9007199254740991), or less than -(-253-1) for negatives. It’s a technical limitation caused by their internal representation.
+			For most purposes that’s quite enough, but sometimes we need really big numbers, e.g. for cryptography or microsecond-precision timestamps.
+			BigInt type was recently added to the language to represent integers of arbitrary length.
+			A BigInt value is created by appending n to the end of an integer<br>
+			<b>string</b><br>
+			A string in JavaScript must be surrounded by quotes.
+			In JavaScript, there are 3 types of quotes.
+			Double quotes: "Hello".
+			Single quotes: 'Hello'.
+			Backticks: `Hello`.
+			Double and single quotes are “simple” quotes. There’s practically no difference between them in JavaScript.
+			Backticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in ${…}<br>
+			<b>boolean</b><br>
+			The boolean type has only two values: true and false.
+			This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.<br>
+			<b>null value</b><br>
+			The special null value does not belong to any of the types described above.
+			It forms a separate type of its own which contains only the null value<br>
+			<b>undefined value</b><br>
+			The special value undefined also stands apart. It makes a type of its own, just like null.
+			The meaning of undefined is “value is not assigned”.
+			If a variable is declared, but not assigned, then its value is undefined<br>
+			<b>objects and symbol</b><br>
+			The object type is special.All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever). In contrast, objects are used to store collections of data and more complex entities.Being that important, objects deserve a special treatment. We’ll deal with them later in the chapter Objects, after we learn more about primitives.The symbol type is used to create unique identifiers for objects.<br>
+			<b>typeof operator</b><br>
+			The typeof operator returns the type of the argument. It’s useful when we want to process values of different types differently or just want to do a quick check.It supports two forms of syntax:As an operator: typeof x.As a function: typeof(x).In other words, it works with parentheses or without them. The result is the same.The call to typeof x returns a string with the type name<br>
+		</p>
+		<h3>Summary</h3>
+		There are 8 basic data types in JavaScript.<br>
+		number for numbers of any kind: integer or floating-point, integers are limited by ±253.<br>
+		bigint is for integer numbers of arbitrary length.<br>
+		string for strings. A string may have zero or more characters, there’s no separate single-character type.<br>
+		boolean for true/false.<br>
+		null for unknown values – a standalone type that has a single value null.<br>
+		undefined for unassigned values – a standalone type that has a single value undefined.<br>
+		object for more complex data structures.<br>
+		symbol for unique identifiers.<br>
+		<br>
+		<br>
+		The typeof operator allows us to see which type is stored in a variable.<br>
+		Two forms: typeof x or typeof(x).<br>
+		Returns a string with the name of the type, like "string".<br>
+		For null returns "object" – this is an error in the language, it’s not actually an object.<br>
+	</body>
+</html>
