@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day 3 assignment</title>
+</head>
+<body>
+	<h1>question 1 solution</h1>
+	<script>
+		var a = parseInt(window.prompt("Enter number to check odd or even"));
+		function checkOE(){
+			if (a%2 == 0){
+				alert("the number is even");
+				var b = a;
+				console.log(b);
+			}
+			else{
+				alert("the number is odd");
+				var b = a;
+				console.log(b);
+			}
+		}
+		checkOE();
+	</script>
+	<h1>question 2 solution</h1>
+	<script>
+		var inpt = window.prompt("Enter OS name and Version separated by a space");
+		var innum = parseInt(inpt.indexOf(" "));
+		var os = inpt.slice(0,innum);
+		innum = innum + 1
+		var version = inpt.slice(innum);
+		alert("The OS name is " + os + " and version is "+ version);
+		console.log(os);
+		console.log(version);
+	</script>
+	<h1>question 3 solution</h1>
+	<script>
+		var marks = parseInt(window.prompt("please enter your marks to check the grades"));
+		//using if else if
+		if(marks >= 85){
+			alert("marks are "+marks+" grade is "+"A+");
+		}
+		else if(marks >= 75){
+			alert("marks are "+marks+" grade is "+"A");
+		}
+		else if(marks >= 60){
+			alert("marks are "+marks+" grade is "+"B");
+		}
+		else if(marks >= 50){
+			alert("marks are "+marks+" grade is "+"C");
+		}
+		else if(marks >= 45){
+			alert("marks are "+marks+" grade is "+"D");
+		}
+		else if(marks >= 37){
+			alert("marks are "+marks+" grade is "+"E");
+		}
+		else{
+			alert("marks are "+marks+" grade is "+"F");
+		}
+		//using switch case
+		switch(true){
+			case marks >= 85:
+				alert("marks are "+marks+" grade is "+"A+");
+				break;
+			case marks >= 75:
+				alert("marks are "+marks+" grade is "+"A");
+				break;
+			case marks >= 60:
+				alert("marks are "+marks+" grade is "+"B");
+				break;
+			case marks >= 50:
+				alert("marks are "+marks+" grade is "+"C");
+				break;
+			case marks >= 45:
+				alert("marks are "+marks+" grade is "+"D");
+				break;
+			case marks >= 37:
+				alert("marks are "+marks+" grade is "+"E");
+				break;
+			default:
+				alert("marks are "+marks+" grade is "+"F")
+		}
+		//using ternary
+		var grade
+		grade = (marks>=85) ? "A+":(marks>=75) ? "A":(marks>=60) ? "B":(marks>=50) ? "C":(marks>=45) ? "D":(marks>=37) ? "E":"F"
+		console.log("marks are "+marks+" grade is "+grade); 
+	</script>
+</body>
+</html>
