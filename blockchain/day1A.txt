@@ -1,0 +1,10 @@
+What is your understanding of blockchain?
+	a blockchain is kind of distributed ledger technology which promises varity of features with one of the most important and main focus on the security of the system.basically blockchain is a block which contains information about the transaction with hashed id of previous block.this makes tracing back a problem or fault very easy in blockchain.introduced to the world with bitcoin blockchain is beyond cryptocurrencies ie, it also promises to strenthen major areas like business, e-commerce, production line and many other due to its distributed ledger and secured system.
+what is the core problem blockchain trying to solve?
+	Block chain is invented due to some banking crisis in 2008. now it is using for security the purpose. The core problem is the database that is controlled by central authority. so blockchain decentralizes it.
+what are few features which blockchain will give you?
+	It is a highly secured network. There is no central governing body so it’s a decentralized network. Since it is decentralized, the cost of maintenance is lower. The data is immutable and verifiable if someone tries to alter the data. It offers high transparency and since its distributed database, hacking is not possible.
+what all things does block contain?
+	A block contains: Block number, transaction records, mining key and previous block’s signature .
+how is the verifiability of blockchain has been attained?
+	Every block contains the previous block’s hash and own block’s hash and because of that we can create the chain of block and link the every block to whole chain. This hash gives the digital signature of block and it is same for the other who are connected with the network. Because of the digital signature we can verify the blockchain.
