@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignment day 4</title>
+</head>
+<body>
+	<h1>question 1 solution</h1>
+	<button onclick="call1()">Answer 1</button>
+	<h1>question 2 solution</h1>
+	<button onclick="call2()">Answer 2</button>
+	<h1>question 3 solution</h1>
+	<button onclick="call3()">Answer 3</button>
+	<h1>question 4 solution</h1>
+	<form>
+		first number:-<textarea id="firstnum"></textarea>
+		second number:-<textarea id="secondnum"></textarea>
+		<p>Use only numbers in above field for all operations<br>
+			1 for addition <br>
+			2 for subtraction <br>
+			3 for multiplication <br>
+			4 for division <br>
+			5 for square root <br>
+			6 for percentage <br>
+			for percentage (use format:- 50% of 160)<br>
+			or use signs(+,-,*,/,$,%)<br>
+		</p>
+		operation:-<textarea id="operation"></textarea>
+	</form>
+	<button onclick="call4()">(submit)Answer 4</button>
+	<h1>question 5 solution</h1>
+	<P>
+		Each products sales price is 40.00<br>
+	</P>
+	<form>
+		<textarea id="tsales"></textarea>
+	</form>
+	<button onclick="call5()">(find commission)Answer 5</button>
+	<h1>question 6 solution</h1>
+	<button onclick="call6()">Answer 6</button>
+	<h1>question 7 solution</h1>
+	<button onclick="call7()">Answer 7</button>
+	<h1>question 8 solution</h1>
+	<button onclick="call8()">Answer 8</button>
+	<script>
+		function call1(){
+			console.log("ans 1");
+			var i=1;
+			for (i; i <= 100; i++) {
+				if (i%3 == 0 && i%5 == 0) {
+					console.log(i+"fizzbuzz");
+				}
+				else if (i%3 == 0) {
+					console.log(i+"fizz");
+				}
+				else if (i%5 == 0) {
+					console.log(i+"buzz");
+				}
+				else {
+					console.log(i);
+				}
+			}
+		}
+		function call2(){
+			console.log("ans 2");
+			const student = {
+				name: "Helsinki",
+				age: 24,
+				projects: {
+					dicegame: "Two player dice game using JavaScript"
+				}
+			}
+			const{name, age, projects} = student;
+			console.log(name);
+			console.log(age);
+			console.log(projects);
+		}
+		function call3(){
+			console.log("ans 3");
+			var shoppingList = ["apples","bannana","watermelon","strawberry"];
+			console.log("shoppingList :-"+shoppingList);
+			var shoppingBasket = [...shoppingList,"ice-cream","cookies"];
+			console.log("shoppingBasket :-"+shoppingBasket);
+		}
+		function call4(){
+			console.log("ans 4");
+			var fn = parseInt(document.getElementById("firstnum").value);
+			var sn = parseInt(document.getElementById("secondnum").value);
+			var o = document.getElementById("operation").value;
+			switch (o) {
+				case "1":
+					console.log(fn+sn);
+					alert(fn+sn);
+					break;
+				case "+":
+					console.log(fn+sn);
+					alert(fn+sn);
+					break;
+				case "2":
+					console.log(fn-sn);
+					alert(fn-sn);
+					break;
+				case "-":
+					console.log(fn-sn);
+					alert(fn-sn);
+					break;
+				case "3":
+					console.log(fn*sn);
+					alert(fn*sn);
+					break;
+				case "*":
+					console.log(fn*sn);
+					alert(fn*sn);
+					break;
+				case "4":
+					if (sn != 0){
+						console.log("Quotient:"+fn/sn);
+						alert("Quotient:"+fn/sn);
+					}
+					else{
+						console.log("can't divide by zero!!");
+						alert("can't divide by zero!!");
+					}
+					break;
+				case "/":
+					if (sn != 0){
+						console.log("Quotient:"+fn/sn);
+						alert("Quotient:"+fn/sn);
+					}
+					else{
+						console.log("can't divide by zero!!");
+						alert("can't divide by zero!!");
+					}
+					break;
+				case "5":
+					console.log("square root of first: "+Math.sqrt(fn)+" square root of second: "+Math.sqrt(sn));
+					alert("square root of first: "+Math.sqrt(fn)+" square root of second: "+Math.sqrt(sn));
+					break;
+				case "$":
+					console.log("square root of first: "+Math.sqrt(fn)+" square root of second: "+Math.sqrt(sn));
+					alert("square root of first: "+Math.sqrt(fn)+" square root of second: "+Math.sqrt(sn));
+					break;
+				case "6":
+					console.log((fn / 100) * sn);
+					alert((fn / 100) * sn);
+					break;
+				case "%":
+					console.log((fn / 100) * sn);
+					alert((fn / 100) * sn);
+					break;
+				default:
+					console.log("error");
+			}
+		}
+		function call5(){
+			console.log("ans 5");
+			var sales = parseInt(document.getElementById("tsales").value);
+			if(sales > 0 && sales <= 5000){
+				alert(0.02*sales);
+			}
+			else if(sales <= 10000){
+				alert(0.05*sales);
+			}
+			else if(sales <= 20000){
+				alert(0.07*sales);
+			}
+			else if(sales > 20000){
+				alert(0.1*sales);
+			}
+			else{
+				alert("error")
+			}
+		}
+		function call6(){
+			console.log("ans 6");
+			var num = 1;
+			while(num <= 100){
+				num = prompt("please enter number larger then 100");
+				if (num = "\n"){
+					break;
+				}
+			}
+		}
+		function call7(){
+			console.log("ans 7");
+			var n = prompt("Enter the number till where you want to get prime numbers");
+			var store = [];
+			var i,j;
+			var primes = [];
+			for (i = 2; i <= n; ++i){
+				if (!store [i]){
+					primes.push(i);
+					for (j = i << 1; j <= n; j += i){
+						store[j] = true;
+					}
+				}
+			}
+			console.log(primes);
+			alert(primes);
+		}
+		function call8(){
+			console.log("ans 8");
+			var yes,no
+			function ask(question, yes, no){
+				if(confirm(question)) yes()
+				else no();
+			}
+			ask(
+				"Do you agree?",
+				yes = () => { alert("You agreed.");},
+				no = () => { alert("You canceled the execution.");}
+				);
+		}
+	</script>
+</body>
+</html>
