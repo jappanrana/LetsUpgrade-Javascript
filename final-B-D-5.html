@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignment day 4</title>
+</head>
+<body>
+	<h1>question 1 solution</h1>
+	<button onclick="call1()">Answer 1</button>
+	<h1>question 2 solution</h1>
+	<button onclick="call2()">Answer 2</button>
+	<h1>question 3 solution</h1>
+	<button onclick="call3()">Answer 3</button>
+	<script>
+		function call1(){
+			var num = parseInt(prompt("Enter a positive integer"));
+			var arr1 = [];
+			for (var i = 0; i < num+1; i++) {
+				arr1[i] = i;
+			}
+			var arrO = arr1.filter(n => n % 2 !== 0 );
+			console.log(arrO);
+			var arrC = arrO.map(n => n *n *n );
+			console.log(arrC);
+		}
+		function call2(){
+			class user {
+				constructor(Id="username",Pass="pass",fname="noname",fage="18",femail="noemail") {
+					this.username = Id;
+					this.password = Pass;
+					this.name = fname;
+					this.age = fage;
+					this.email = femail;
+					this.coins = 0;
+					this.lnid = "tmp";
+					this.lnps = "tmp";
+					this.courses = ["python","java","c"];
+				}
+				login(){
+					this.lnid = prompt("Enter username");
+					if (this.lnid == this.username) {
+						this.lnps = prompt("Enter password");
+						if (this.lnps == this.password) {
+							alert("Welcome "+this.name);
+						}
+						else {
+							alert("Wrong password");
+						}
+					}
+					else {
+						alert("Wrong Username");
+					}
+				}
+				viewdetails(){
+					alert(this.name+"\n"+this.age+"\n"+this.email);
+					alert(this.coins+" "+this.courses);
+				}
+			}
+			class moderator extends user{
+				constructor() {
+					super ();
+				}
+				addcoin(userobj,ncoin) {
+					userobj.coins += ncoin;
+				}
+				delcoin(userobj,ncoin) {
+					userobj.coins -= ncoin;
+				}
+			}
+			class admin extends moderator{
+				constructor() {
+					super();
+					this.index = 0;
+				}
+				addcourse(userobj,cname) {
+					userobj.courses.push(cname);
+				}
+				delcourse(userobj,cname) {
+					this.index = userobj.courses.indexOf(cname);
+					if(this.index>-1){
+						userobj.courses.splice(this.index, 1);
+					}
+				}
+			}
+			usr1 = new user("usr01","pass01","raj","16");
+			usr1.login();
+			usr2 = new user();
+			usr3 = new user("usr03","pass03","khush","15");
+			usr4 = new user("usr04","pass04","vansh","17");
+			md1 = new moderator("md1","passmd1");
+			md1 = new moderator("md2","passmd2");
+			md1.addcoin(usr3,50);
+			usr3.viewdetails();
+			adm1 = new admin();
+			adm1.addcourse(usr4,"blockchain");
+			adm1.delcourse(usr4,"java");
+			usr4.viewdetails();
+		}
+		function call3(){
+			var todos;
+			for (var i = 0; i <= 5; i++) {
+				var rannum = Math.floor((Math.random() * 200) + 1);
+				rannum = rannum.toString();
+				var search = "https://jsonplaceholder.typicode.com/todos/" + rannum
+				fetch(search)
+                .then(response => response.json())
+                .then(data => {console.log(data)
+               				 	for(let j = 0 ; j<data.length;j++){
+             	   					if(data[j].completed==true){
+                						console.log(data);
+                					}
+                				}
+               				 })	
+			}
+		}
+	</script>
+</body>
+</html>
