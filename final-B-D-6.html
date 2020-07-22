@@ -2,6 +2,14 @@
 <html>
 <head>
 	<title>assignment</title>
+	<style>
+		.light{
+		}
+		.dark{
+			background-color: black;
+			color: white;
+		}
+	</style>
 </head>
 <body bgcolor=white>
 	<h1>Question 1</h1>
@@ -11,6 +19,7 @@
 	<h1>Question 3</h1>
 	<div id="txt"></div>
 	<button onclick="call3()">Answer</button>
+	<button onclick="togle()">Change Theme</button>
 	<script>
 		var count = 0;
 		var sec = 5;
@@ -58,6 +67,27 @@
 			}
 			document.getElementById('txt').innerHTML = h + ":" + m + ":" + s +" "+ label;
 			var t = setTimeout(startTime, 500);
+			}
+		function startTime() {
+			var today = new Date();
+			var hr = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			var label = "AM";
+			if (m < 10) {m = "0" + m};
+			if (s < 10) {s = "0" + s};  
+			if (hr > 12){
+				var h = hr-12;
+				label = "PM"
+			}
+			else {
+				var h = hr;
+			}
+			document.getElementById('txt').innerHTML = h + ":" + m + ":" + s +" "+ label;
+			var t = setTimeout(startTime, 500);
+			}
+		function togle(){
+			document.getElementById("bode").classList.toggle("dark");
 			}
 	</script>
 </body>
