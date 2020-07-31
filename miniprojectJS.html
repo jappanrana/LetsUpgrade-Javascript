@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mini project</title>
+</head>
+<body>
+	<div style="background-color: blue; color: black; font-size: 30px; text-align: center; font-weight: 300em;" id="quoted"></div>
+	<h1>Question 1</h1>
+	<p>Not solved as only one was mentioned in email</p>
+	<h1>Question 2</h1>
+	<div id="countdown"></div>
+	<button onclick="call2()">Answer</button>
+	<h1>Question 3</h1>
+	<button onclick="call3()">Answer</button>
+	<script>
+		function startTimer() {
+			var presentTime = document.getElementById('countdown').innerHTML;
+			var timeArray = presentTime.split(/[:]+/);
+			var m = timeArray[0];
+			var s = checkSecond((timeArray[1] - 1));
+			if(s==59){m=m-1}
+			document.getElementById('countdown').innerHTML = m + ":" + s;
+			if(m<0){alert('countdown completed')}
+			else{setTimeout(startTimer, 1000);}
+		}
+
+		function checkSecond(sec) {
+			if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+			if (sec < 0) {sec = "59"};
+			return sec;
+		}
+		
+		function call2(){
+			var tmp = prompt("enter counter time");
+			if (tmp < 0) {alert("Wrong input!!!")} else {
+				document.getElementById('countdown').innerHTML =  tmp + ":" + 0;
+				startTimer();
+			}
+		}
+		function call3(){
+			// list of quotes with 20 quotes
+			var quotelist = ["Any fool can write code that a computer can understand. Good programmers write code that humans can understand.","Talk is cheap. Show me the code.","First learn computer science and all the theory. Next develop a programming style. Then forget all that and just hack.","Most good programmers do programming not because they expect to get paid or get adulation by the public, but it is fun to program.","Measuring programming progress by the lines of code is like measuring aircraft building progress by weight.","There are two ways to write error-free programs; only the third one works.","When someone says, “I want a programming language in which I need only say what I want done,” give him a lollipop.","Programming is like sex. One mistake and you have to support it for the rest of your life.","Perfection [in design] is achieved, not when there is nothing more to add, but when there is noting left to take away.","Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.","One man’s crappy software is another man’s full time job.","Good design adds value faster than it adds cost.","Without requirements or design, programming is the art of adding bugs to an empty text file.","The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.","Java is to JavaScript what car is to carpet.","Programs must be written for people to read, and only incidentally for machines to execute.","Give a man a program, frustrate him for a day.Teach a man to program, frustrate him for a lifetime.","I'm not a great programmer; I'm just a good programmer with great habits","Truth can only be found in one place: the code.","A language that doesn't affect the way you think about programming is not worth knowing."];
+			var rnd = Math.floor((Math.random() * 19) + 1);
+			document.getElementById('quoted').innerHTML =  quotelist[rnd];
+			setTimeout(call3, 5000);
+		}
+	</script>
+</body>
+</html>
